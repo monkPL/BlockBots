@@ -1,11 +1,15 @@
 #!/bin/bash
 
-
+#iptables binary
 IPT=/sbin/iptables
+#direcotry
 TDIR=/root/security
+#log direcotry
 LDIR=/var/log
+#php binary
 PHP=/usr/bin/php
 
+cd $TDIR
 if [[ ! -e secure.db ]]; then
     sqlite3 secure.db "CREATE TABLE blocked (dt date NOT NULL, ip varchar(16) NOT NULL)";
 fi
